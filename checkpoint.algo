@@ -1,0 +1,37 @@
+ALGORITHM checkpoint_algo
+VAR
+    sentence : STRING ;
+    i,j,k : INTEGER;
+    
+
+BEGIN
+
+    write("input sentence");
+    read(sentence);
+    i:=0;
+    j:=0;
+    k:=0;
+    FOR n FROM 0 TO sentence.length-1 STEP 1  DO
+        IF (sentence[n]=" ") THEN
+            k:=k+1;
+        END_IF
+        IF (sentence[n]="o") OR (sentence[n]="e") OR (sentence[n]="u") OR (sentence[n]="a") OR (sentence[n]="y") OR (sentence[n]="i")) THEN
+            j:=j+1;
+        END_IF
+        
+        IF (sentence[n]<>".") THEN
+            i:=i+1;
+        ELSE
+            BREAK;
+        END_IF
+
+    END_FOR
+
+
+    write ("length of sentence");
+    write(i);
+    write ("number of vowels");
+    write(j);
+    write ("number of words");
+    write(k);   
+END
